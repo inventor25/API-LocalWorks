@@ -65,6 +65,13 @@ public class PatchWork01 extends JsonPlaceHolderBaseUrl {
        assertEquals(200,response.statusCode());
        assertEquals(expectedData.get("title"),actualData.get("title"));
        assertEquals(2,actualData.get("userId"));
-       assertEquals(true,actualData.get("completed"));
+       assertEquals(true,(boolean)actualData.get("completed"));
+
+
+       //*******
+        //actualData.get("completed") wrapper olduğu için assertTrue kullanımı önermiyor
+        //Eğer (boolean)actualData.get("completed")); olarak cast yapıp assert istenseydi assertTrue kullanımı önerilecekti
+        //******
+
     }
 }
