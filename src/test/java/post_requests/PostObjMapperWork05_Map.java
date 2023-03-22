@@ -13,7 +13,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class PostObjMapperWork05 extends JsonPlaceHolderBaseUrl {
+public class PostObjMapperWork05_Map extends JsonPlaceHolderBaseUrl {
     /*
     Given
       1) https://jsonplaceholder.typicode.com/todos
@@ -56,6 +56,13 @@ public class PostObjMapperWork05 extends JsonPlaceHolderBaseUrl {
         //****** ObjectMapper çeviricidir istersek HashMap.class yerine bir pojo class koyup ona da çevirebiliriz
         // Dilersek ObjectMapper kullanarak ==>  JsonPlaceHolderPojo actualData1 = new ObjectMapper().readValue(response.asString(), JsonPlaceHolderPojo.class);
         //çevirmeyi de yapabiliriz
+
+        /*
+                 @JsonIgnoreProperties(ignoreUnknown = true)
+      ******* -----import com.fasterxml.jackson.core.JsonProcessingException;------
+       *******      import com.fasterxml.jackson.databind.ObjectMapper;
+            bu importlar çalışmazsa code house dan import edilmeli
+         */
 
         Map<String, Object> actualData = new ObjectMapper().readValue(response.asString(), HashMap.class);
 

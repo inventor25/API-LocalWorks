@@ -40,6 +40,12 @@ public class JsonPlaceHolderPojo {
     Do assert yaparken bu class'tan aldığım değişkeni karşılaştırma yapmam gerekecek
     bu nedenle getter 'a ihtiyacımız var değişkenleri okumak için istersek bu dataları constructor'sız
     değiştirebilmemiz için setter ları da oluşturdum
+
+                    @JsonIgnoreProperties(ignoreUnknown = true)
+      ******* -----import com.fasterxml.jackson.core.JsonProcessingException;------
+       *******      import com.fasterxml.jackson.databind.ObjectMapper;
+            bu importlar çalışmazsa code house dan import edilmeli
+
      */
     public Integer getUserId() {
         return userId;
@@ -91,5 +97,7 @@ public class JsonPlaceHolderPojo {
              "id": 201
             }
      */
+
+
 
 }

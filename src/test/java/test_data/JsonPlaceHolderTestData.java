@@ -25,4 +25,14 @@ public class JsonPlaceHolderTestData {
         return expectedData;
 
     }
+
+    /*
+    Json'ı String'e çeviren reusable bir method olşuturduk yani expected data'yı string yapan method
+     */
+
+    public static String expectedDataInString(Integer userId, String title, Boolean completed){
+
+        return "{ \"userId\": "+userId+", \"title\": \""+title+"\", \"completed\": "+completed+" }";
+
+    }
 }
