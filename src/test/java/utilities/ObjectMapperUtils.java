@@ -1,7 +1,9 @@
 package utilities;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 
 public class ObjectMapperUtils {
 
@@ -36,7 +38,7 @@ bu importlar çalışmazsa code house dan yapılması gerekli
 
         try {
             return new ObjectMapper().readValue(json, cls);
-        } catch (JsonProcessingException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
